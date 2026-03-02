@@ -1,0 +1,26 @@
+// You can handle multiple exception types with multiple catch clauses:
+
+static void Main() { MainMain ("one"); }
+
+static void MainMain (params string[] args)
+{
+  try
+  {
+    byte b = byte.Parse (args[0]);
+    Console.WriteLine (b);
+  }
+  catch (IndexOutOfRangeException)
+  {
+    Console.WriteLine ("Please provide at least one argument");
+  }
+  catch (FormatException)
+  {
+    Console.WriteLine ("That's not a number!");
+  }
+  catch (OverflowException)
+  {
+    Console.WriteLine ("You've given me more than a byte!");
+  }
+}
+
+static int Calc (int x) { return 10 / x; }
